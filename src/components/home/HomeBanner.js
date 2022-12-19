@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 
 const HomeBanner = () => {
-  const [title, setTitle] = useState("Bangladesh is small country");
+  let userName = useRef();
+  let userPass = useRef();
 
-  const changeTitle = () => {
-    setTitle("Bangladesh is populated country");
+  const submitForm = () => {
+    let getUserName = userName.current.value;
+    let getUserPass = userPass.current.value;
+
+    alert(getUserName);
+    alert(getUserPass);
   };
 
   return (
     <div>
-      <h1>{title}</h1>
-      <button onClick={changeTitle}>Click To Change</button>
+      <input ref={userName} type="text" placeholder="User Name" />
+      <br /> <br />
+      <input ref={userPass} type="password" placeholder="User Password" />
+      <br /> <br />
+      <button onClick={submitForm}>Send</button>
     </div>
   );
 };
