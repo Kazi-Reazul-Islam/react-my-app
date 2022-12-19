@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
-const HomeBanner = (props) => {
+const HomeBanner = () => {
+  const [title, setTitle] = useState("Bangladesh is small country");
+
+  const changeTitle = () => {
+    setTitle("Bangladesh is populated country");
+  };
+
   return (
     <div>
-      <h1>{props.title.name}</h1>
-      <h1>{props.title.age}</h1>
-      <h1>{props.title.city}</h1>
+      <h1>{title}</h1>
+      <button onClick={changeTitle}>Click To Change</button>
     </div>
   );
 };
