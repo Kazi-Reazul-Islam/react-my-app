@@ -5,9 +5,7 @@ const HomePage = () => {
   return (
     <div>
       <HomeBanner
-        title="Welcome To"
-        subTitle="Reazul Islam"
-        greeting="How Are You Doing Today"
+        title={{ name: "Kazi Reazul Islam", age: "23", city: "Khulna" }}
       />
     </div>
   );
