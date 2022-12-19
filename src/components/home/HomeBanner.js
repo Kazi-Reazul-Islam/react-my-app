@@ -1,26 +1,22 @@
-import React, { useRef } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const HomeBanner = () => {
-  let userName = useRef();
-  let userPass = useRef();
+  let [todo, setTodo] = useState([]);
 
-  const submitForm = () => {
-    let getUserName = userName.current.value;
-    let getUserPass = userPass.current.value;
+  useEffect(() => {
+    // Api Call
+    axios
+      .get("https://jsonplaceholder.typicode.com/todos/")
+      .then((res) => {
+        setTimeout(() => {
+          setTodo(res.data);
+        }, 1500);
+      })
+      .catch((err) => {});
+  });
 
-    alert(getUserName);
-    alert(getUserPass);
-  };
-
-  return (
-    <div>
-      <input ref={userName} type="text" placeholder="User Name" />
-      <br /> <br />
-      <input ref={userPass} type="password" placeholder="User Password" />
-      <br /> <br />
-      <button onClick={submitForm}>Send</button>
-    </div>
-  );
+  return <div>{JSON.stringify(todo)}</div>;
 };
 
 export default HomeBanner;
