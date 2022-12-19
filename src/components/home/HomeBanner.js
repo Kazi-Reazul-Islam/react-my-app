@@ -1,7 +1,14 @@
 import React from "react";
 
-const HomeBanner = () => {
-  return <div>HomeBanner</div>;
+const HomeBanner = (props) => {
+  return (
+    <div>
+      <h1>
+        {props.title} {props.subTitle}
+      </h1>
+      <h1>{props.greeting}</h1>
+    </div>
+  );
 };
 
 export default HomeBanner;
