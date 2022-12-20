@@ -4,24 +4,30 @@ class HomeBanner extends Component {
   constructor() {
     super();
     this.state = {
-      title: "Tap the button to see your country",
+      color: "Orange",
     };
   }
 
   render() {
-    return (
-      <div>
-        <h1>{this.state.title}</h1>
-        <button onClick={() => this.setState({ title: "Bangladesh" })}>
-          Bangladesh
-        </button>
-        <button onClick={() => this.setState({ title: "India" })}>India</button>
-        <button onClick={() => this.setState({ title: "Nepal" })}>Nepal</button>
-        <button onClick={() => this.setState({ title: "Bhutan" })}>
-          Bhutan
-        </button>
-      </div>
-    );
+    if (this.state.color === "Red") {
+      return (
+        <div>
+          <button className="btn btn-danger">Red</button>
+        </div>
+      );
+    } else if (this.state.color === "Blue") {
+      return (
+        <div>
+          <button className="btn btn-primary">Blue</button>
+        </div>
+      );
+    } else if (this.state.color === "Orange") {
+      return (
+        <div>
+          <button className="btn btn-warning">Orange</button>
+        </div>
+      );
+    }
   }
 }
 
