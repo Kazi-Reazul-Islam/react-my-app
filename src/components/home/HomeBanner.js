@@ -3,31 +3,24 @@ import React, { Component } from "react";
 class HomeBanner extends Component {
   constructor() {
     super();
-    this.state = {
-      color: "Orange",
-    };
   }
 
+  myClick = () => {
+    let text = this.myText.value;
+    alert(text);
+  };
   render() {
-    if (this.state.color === "Red") {
-      return (
-        <div>
-          <button className="btn btn-danger">Red</button>
-        </div>
-      );
-    } else if (this.state.color === "Blue") {
-      return (
-        <div>
-          <button className="btn btn-primary">Blue</button>
-        </div>
-      );
-    } else if (this.state.color === "Orange") {
-      return (
-        <div>
-          <button className="btn btn-warning">Orange</button>
-        </div>
-      );
-    }
+    return (
+      <div>
+        <input
+          ref={(inputText) => {
+            this.myText = inputText;
+          }}
+          type="text"
+        />
+        <button onClick={this.myClick}>Submit</button>
+      </div>
+    );
   }
 }
 
