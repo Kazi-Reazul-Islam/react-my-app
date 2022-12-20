@@ -8,7 +8,7 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <HomeBanner />
+        <HomeBanner title="Welcome" subTitle="To Bangladesh" />
       </div>
     );
   }
